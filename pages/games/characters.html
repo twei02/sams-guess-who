@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/grid.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/d3de2c19-a95e-4bef-98c4-408574460931%2Ficons8-question-mark-100.png?v=1610063772812"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <title>characters board</title>
+  </head>
+  <body>
+    <h1>guess who</h1>
+    <button
+      type="button"
+      class="btn"
+      data-toggle="modal"
+      data-target="#instructionModal"
+      id="instructions"
+    >
+      instructions
+    </button>
+    <div
+      class="modal fade"
+      id="instructionModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="instructionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="instructionModalLabel">Instructions</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="test">
+              Goal of the game: Guess your opponent’s card before they guess
+              your card.
+            </p>
+            <p>
+              To start, choose a name from the dropdown list to be your mystery
+              card. Use the chat box and take turns asking one “yes” or “no”
+              question to one another. Based on your opponent’s answer, use the
+              grid of images to eliminate people/characters/objects that cannot
+              be their chosen card. To eliminate a card, click on the image, and
+              it will turn black and white. If you made a mistake, click again
+              and it will return to full color.
+            </p>
+            <p>
+              Example: you might ask “Does the person on your card have black
+              hair?”. If your opponent responds “yes”, you can click on all the
+              people with non-black hair, leaving only people with black hair on
+              your grid. If “no”, then you can eliminate the people with black
+              hair on your grid.
+            </p>
+            <p>
+              Think you figured out your opponent’s card? You can make a guess
+              instead of asking a question. Tell your opponent you are making
+              your guess, and if you are incorrect, you lose the game. If you
+              are correct, you win!
+            </p>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">
+                close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form class="form-inline" id="characterForm">
+            <div class="form-group row">
+              <select
+                class="form-control form-control-sm"
+                id="cardFormControlSelect1"
+              >
+              </select>
+              <button type="submit" class="btn" id="chooseCharacter">
+                choose card
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col">
+          <div id="characterChosen"><h2 id="characterChosenTitle"></h2></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="imageDisplay" class="card-columns"></div>
+
+    <form id="question-form">
+      <textarea rows="8" cols="80" id="message"></textarea>
+      <br />
+      <button type="submit" class="btn">
+        send
+      </button>
+    </form>
+
+    <p id="chat"></p>
+
+    <button type="button" class="btn" onclick="location.href='/';">
+      home
+    </button>
+
+    <script src="/charactersversion/characters.js"></script>
+    <script src="/main.js"></script>
+    <script src="/charactersversion/charactersGrid.js"></script>
+  </body>
+</html>

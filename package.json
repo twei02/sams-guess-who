@@ -1,0 +1,23 @@
+{
+  "name": "guess-who",
+  "version": "1.0.0",
+  "description": "Our final CSSI project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "Tori Wei, Nathan Arellanes, Halle Powell",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

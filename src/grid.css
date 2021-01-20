@@ -1,0 +1,27 @@
+#imageDisplay {
+  margin: 120px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.card-columns {
+  column-count: 8;
+}
+
+.card {
+  height: 170px;
+  
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.card-body{
+  padding: 0px;
+}
+
+.card-text{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
